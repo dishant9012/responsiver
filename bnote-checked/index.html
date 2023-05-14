@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>grid-webs</title>
+    <style>
+      * {
+        padding: 0px;
+        margin: 0px;
+        font-family: cursive;
+      }
+      .container {
+        display: grid;
+        background-color: yellowgreen;
+        grid-gap: 5px;
+        padding: 10px;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 120px 100px 300px 70px 90px;
+        grid-template-areas:
+          "heads heads heads"
+          "navs navs navs"
+          "section left left"
+          "section main main"
+          "footer footer footer";
+        /*grid-gap: 5px;*/
+        /* justify-content: center;
+        align-content: space-between;
+        height: 900px;
+        background-color: tomato; */
+      }
+      .items {
+        padding: 20px 0px;
+        font-size: 22px;
+        background-color: pink;
+        border: 3px solid black;
+      }
+      .itr1 {
+        /* grid-column: 1 / span 4; */
+        grid-area: heads;
+        text-align: start;
+        text-decoration: underline;
+        text-shadow: 2px 5px rgb(25, 39, 186);
+        font-size: 40px;
+        background-image: url("https://static.vecteezy.com/system/resources/previews/009/213/287/original/three-photo-frames-on-blue-background-design-free-vector.jpg");
+        color: rgb(92, 89, 89);
+        user-select: none;
+        padding: 15px 20px;
+        border: 3px solid white;
+        border-radius: 6px;
+      }
+      .itr2 {
+        grid-area: navs;
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3InWfBpuoKaUR94Qecex2U7KenBOXpK3bEQ&usqp=CAU");
+      }
+      .itr2 ul {
+        display: flex;
+        justify-content: space-evenly;
+      }
+      .itr2 li {
+        padding: 10px;
+        list-style: none;
+        display: block;
+      }
+      .itr2 li a {
+        text-decoration: none;
+        font-size: 30px;
+        color: black;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
+      }
+      .itr2 a:hover {
+        background-color: rgb(23, 22, 22);
+        color: white;
+        padding: 10px;
+        border: 2px solid rgb(232, 227, 227);
+        border-radius: 5px;
+        font-weight: bold;
+        font-family: cursive;
+      }
+      .itr3 {
+        grid-area: section;
+        background-image: url("https://img.freepik.com/free-vector/isometric-tecnology-abstract-background_52683-842.jpg?w=740&t=st=1684062329~exp=1684062929~hmac=9714589690c32fcaea0c40ca9200ee03fbbbed61f4bd65eba53ee1f54810962a");
+        background-repeat: no-repeat;
+        background-size: 100%;
+      }
+      .itr3 li {
+        list-style-position: inside;
+        list-style-type: none;
+        padding: 5px 30px;
+      }
+      .itr3 li a {
+        text-decoration: none;
+        font-family: monospace;
+        color: rgb(223, 210, 210);
+      }
+      .itr5 {
+        grid-area: main;
+        text-align: center;
+        font-weight: bolder;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3InWfBpuoKaUR94Qecex2U7KenBOXpK3bEQ&usqp=CAU");
+        user-select: none;
+      }
+      .itr6 {
+        grid-area: footer;
+        user-select: none;
+        text-align: center;
+        font-weight: 500;
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3InWfBpuoKaUR94Qecex2U7KenBOXpK3bEQ&usqp=CAU");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 100%;
+      }
+
+      .itr4 {
+        /*grid-row-start: 2;
+        grid-row-end: 5;
+        grid-column-start: 1;
+        grid-column-end: 3; */
+        grid-area: left;
+        overflow-wrap: break-word;
+        text-indent: 60px;
+        overflow-y: scroll;
+        background-image: url("https://img.freepik.com/premium-vector/print_586360-903.jpg?w=2000");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 100%;
+        opacity: 0.8;
+      }
+
+      @media screen and (max-width: 700px) {
+        .container {
+          background-color: rgb(218, 218, 213);
+          display: grid;
+          grid-gap: 5px;
+          padding: 10px;
+          grid-template-columns: 1fr 1fr 1fr;
+          grid-template-rows: 120px 250px 350px 270px 90px;
+          grid-template-areas:
+            "heads heads heads"
+            "navs navs navs"
+            "section section section"
+            "left left left"
+            "main main main"
+            "footer footer footer";
+        }
+        .itr1 {
+          background-image: url("https://static.vecteezy.com/system/resources/previews/009/213/287/original/three-photo-frames-on-blue-background-design-free-vector.jpg");
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+
+        .itr2 ul {
+          display: block;
+          margin-left: 50px;
+        }
+
+        .itr5 {
+          background-image: url("https://img.freepik.com/free-vector/wavy-background-with-copy-space_52683-65230.jpg?w=2000");
+          color: rgb(32, 18, 46);
+        }
+
+        .itr3 {
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="items itr1">D-code</div>
+      <div class="items itr2">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Conatant</a></li>
+          <li><a href="#">Join us</a></li>
+        </ul>
+      </div>
+      <div class="items itr3">
+        <ul>
+          <li><a href="">Html</a></li>
+          <li><a href="">Css</a></li>
+          <li><a href="">Java-script</a></li>
+          <li><a href="">Python</a></li>
+          <li><a href="">Java</a></li>
+          <li><a href="">Ruby</a></li>
+          <li><a href="">c++</a></li>
+        </ul>
+      </div>
+      <div class="items itr4">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint assumenda
+        facilis, culpa debitis at rem mollitia pariatur quisquam eligendi nobis.
+        Provident adipisci debitis omnis sunt quos! Ad maxime hic provident?
+        <br /><br />Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+        Amet, ducimus! <br /><br />
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur
+        excepturi nisi labore delectus. Tempore, reiciendis quod. Maxime nostrum
+        beatae facere!
+        <br />
+        <br />
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, nulla
+        officiis dignissimos necessitatibus fugit dolore blanditiis in fugiat
+        consequuntur maxime?
+        <br /><br />
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo sit
+        doloribus deleniti, maiores ab harum earum architecto alias reiciendis,
+        unde, quia corporis impedit sunt facilis reprehenderit repudiandae
+        suscipit totam nobis. Molestias fuga expedita voluptatem explicabo a.
+        Quisquam soluta iste ratione!
+      </div>
+      <div class="items itr5">Complte Course Get Free Certificat 🧮</div>
+      <div class="items itr6">Www.D-code,to &copy; rights Reserved 2019</div>
+    </div>
+  </body>
+</html>
